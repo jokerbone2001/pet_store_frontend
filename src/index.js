@@ -1,14 +1,50 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Orders from './Orders';
+import Users from './Users';
+import Products from './Products';
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
+export default function App(){
+  return (
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to='/order'>Order</Link>
+            </li>
+            <li>
+              <Link to='/users'>User</Link>
+            </li>
+            <li>
+              <Link to='/product'>Product</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path='/order' element={<Orders></Orders>}/>
+          <Route path='/users' element={<Users/>}/>
+          <Route path='/product' element={<Products/>}/>
+        </Routes>
+      </div>
+    </Router>
+  )
+}
+
 //import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+
+  <App />
 );
 //ReactDOM.render(<App />, document.getElementById('root'));
 
