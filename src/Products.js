@@ -1,4 +1,6 @@
 import React from 'react'
+import './Products.css';
+import { Link } from 'react-router-dom';
 
 const ProductURL = "http://localhost:8080/product_json";
 
@@ -24,31 +26,18 @@ class Products extends React.Component {
     this.fetchURL();
   }
   render() {
-    
     return (
-
       <div className="Products">
-        Product Page
         {this.state.Products.map((product, index) => (
-            <div key={index} style={{marginBottom: '20px'}}>
+            <div className="Product-card" key={index}>
                 <h2>{product.name}</h2>
                 {product.images.map((image, imageIndex) => (
-                    <img key={imageIndex} src={image} alt="image" style={{width: '200px', height: '200px'}}/>
+                    <img key={imageIndex} src={image} alt="image"/>
                 ))}
-                
-                <p>Amount: {product.amount}</p>
-                <p>Price: {product.price}</p>
-                <p>Description: {product.description}</p>
-                <p>Feature:</p>
-                    <ul>
-                        {product.feature.map((feature, featureIndex) => (
-                        <li key={featureIndex}>{feature}</li>
-                        ))}
-                    </ul>
+                <Link to={`/product/${product._id}`} className="Product-button">View Details</Link>
             </div>
         ))}
       </div>
-
     )
   }
 }

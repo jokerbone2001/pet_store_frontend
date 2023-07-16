@@ -1,0 +1,19 @@
+.Orders {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.Orders h2 {
+    color: #333;
+}
+
+.Orders img {
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.Orders p {
+    color: #666;
+}

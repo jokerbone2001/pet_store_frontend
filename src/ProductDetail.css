@@ -1,0 +1,35 @@
+.ProductDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    padding: 2em;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.ProductDetail img {
+    margin-bottom: 1em;
+}
+
+.ProductDetail h2 {
+    margin-bottom: 1em;
+}
+
+.ProductDetail ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.ProductDetail li::before {
+    content: '* ';
+    color: #ff0000;
+}
+
+.ProductDetail div {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    margin-top: 2em;
+}

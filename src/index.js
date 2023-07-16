@@ -4,7 +4,7 @@ import './index.css';
 import Orders from './Orders';
 import Users from './Users';
 import Products from './Products';
-
+import ProductDetail from './ProductDetail';
 import {
   BrowserRouter as Router,
   Routes,
@@ -33,12 +33,12 @@ export default function App(){
           <Route path='/order' element={<Orders></Orders>}/>
           <Route path='/users' element={<Users/>}/>
           <Route path='/product' element={<Products/>}/>
+          <Route path='/product/:id' element={<ProductDetail/>}/>
         </Routes>
       </div>
     </Router>
   )
 }
-
 //import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
