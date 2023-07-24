@@ -20,16 +20,19 @@ class App extends React.Component {
     super(props);
     this.state = {
       loginStatus : false,
-      token : ""
+      token : "",
+      user_id:""
     };
   }
   handleAuth = (userData) => {
     console.log(userData);
     this.setState({
       loginStatus : userData.status,
-      token:userData.token
+      token:userData.token,
+      user_id: userData.user_id
     });
-};
+  };
+
 
   render() {
     return (
@@ -57,10 +60,14 @@ class App extends React.Component {
           <Routes>
             <Route path='/order' element={<Orders></Orders>}/>
             <Route path='/users' element={<Users
-              handleAuth={this.handleUsers}
+              handleAuth={this.handleAuth}
               loginStatus = {this.state.loginStatus}
               token = {this.state.token}/>}/>
-            <Route path='/product' element={<Products/>}/>
+            <Route path='/product' element={<Products 
+              handleAuth={this.handleAuth}
+              loginStatus = {this.state.loginStatus}
+              token = {this.state.token}
+              user_id = {this.state.user_id}/>}/>
             <Route path='/product/:id' element={<ProductDetail/>}/>
             <Route path='/login' element={<LoginPage 
               handleAuth={this.handleAuth}

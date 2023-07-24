@@ -27,6 +27,13 @@ const ProductDetail = () => {
     if (!product) {
         return <div>Loading...</div>
     }
+    const handleAddToCart = (productId) => {
+        const quantity = prompt('Please enter the quantity:', 1);
+        if (quantity && !isNaN(quantity)) {
+            console.log(`Adding product ${productId} with quantity ${quantity} to the cart.`);
+            // TODO: Send this information to the backend
+        }
+    }
 
     return (
         <div className="ProductDetail">
@@ -48,7 +55,10 @@ const ProductDetail = () => {
                 <p>Description: </p>
                 <p>{product.description}</p>
             </div>
+            <button onClick={() => handleAddToCart(product._id)}>Add to Cart</button>
+
         </div>
+        
     )
 }
 

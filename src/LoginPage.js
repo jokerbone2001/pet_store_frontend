@@ -20,6 +20,7 @@ const SubmitButton = (props) => {
 const LoginPage = (props) =>
 {
     const navigate = useNavigate();
+    
     return  <Login 
     handleAuth={props.handleAuth}
     loginStatus = {props.loginStatus}
@@ -61,12 +62,12 @@ class Login extends React.Component {
         .then(response => response.json())
         .then(data => {
             // console.log(data.message);
-            // console.log(data.token);
+            console.log(data.user_id);
             if (data.message === "Logged in successfully") {
                 alert('Logged in successfully');
                 data.status = true;
                 this.props.handleAuth(data);
-
+                
                 this.props.navigate('/users');  
 
             } else {
@@ -85,6 +86,7 @@ class Login extends React.Component {
         return (
             <div className="Login">
                 <h1 style={{ textAlign: 'center', marginBottom: '30px' }}>Login Page</h1>
+               
                 <form onSubmit={this.handleSubmit}>
                     <UserInput 
                         name="email_address" 
