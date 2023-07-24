@@ -34,12 +34,11 @@ class Products extends React.Component {
         const dataToSend = {
           user_id: this.props.user_id,
           order_time: new Date(),
-          products: [{
+          product: [{
             product_id: productId,
             amount: parseInt(quantity)
           }],
           total_price,
-          quantity
       };
 
       fetch(OrderAddtURL, {
@@ -52,10 +51,12 @@ class Products extends React.Component {
       })
       .then(response => response.json())
       .then(data => {
-          if (data.message) {
+          console.log(data);
+          if (data.message === "Successfully added") {
               alert('Order added successfully');
-          } else {
-              alert('Error adding product to cart. Please try again.');
+          } 
+          else {
+              alert('Order failed due to insufficient stock.');
           }
       })
       .catch(error => {
