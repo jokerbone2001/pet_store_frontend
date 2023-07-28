@@ -1,9 +1,10 @@
 import React from 'react'
 import './Products.css';
 import { Link } from 'react-router-dom';
+import rootURL from './url';
 
-const ProductURL = "http://localhost:8080/product_json";
-const OrderAddtURL = "http://localhost:8080/users/order/add";
+const ProductURL = rootURL+"/product_json";
+const OrderAddtURL = rootURL+"/users/order/add";
 
 class Products extends React.Component {
   constructor(props) {

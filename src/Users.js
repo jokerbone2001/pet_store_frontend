@@ -1,8 +1,8 @@
 import React from 'react';
 import './Users.css';
-
-const UserURL = "http://localhost:8080/users/profile";
-const UpdateUserURL = "http://localhost:8080/users/update"; 
+import rootURL from './url';
+const UserURL = rootURL+"/users/profile";
+const UpdateUserURL = rootURL+"/users/update"; 
 
 class Users extends React.Component {
   constructor(props) {

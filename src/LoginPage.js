@@ -1,7 +1,9 @@
 import React from 'react';
 
 import { useNavigate } from 'react-router-dom';
-const LoginPageURL = "http://localhost:8080/auth/login";
+import rootURL from './url';
+
+const LoginPageURL = rootURL+"/auth/login";
 
 const UserInput = (props) => (
     <input

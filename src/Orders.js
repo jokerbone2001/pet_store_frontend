@@ -1,8 +1,10 @@
 import React from 'react'
 import './Orders.css';
+import rootURL from './url';
 
-const OrderURL = "http://localhost:8080/order_json";
-const ProductURL = "http://localhost:8080/product_json";
+const ProductURL = rootURL+"/product_json";
+
+const OrderURL = rootURL+"/order_json";
 
 
 class Orders extends React.Component {

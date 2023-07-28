@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './ProductDetail.css';
+import rootURL from './url';
 
-const ProductURL = "http://localhost:8080/product_json";
+const ProductURL = rootURL+"/product_json";
+
 
 const ProductDetail = () => {
     const { id } = useParams();

@@ -1,6 +1,7 @@
 import React from 'react';
+import rootURL from './url';
 
-const SignupURL = "http://localhost:8080/auth/register";
+const SignupURL = rootURL+"/auth/register";
 
 const SubmitButton = (props) => {
     return <button className="submit" type="submit">{props.text}</button>
