@@ -1,3 +1,3 @@
-const rootURL = "http://35.183.27.135";
+const rootURL = "https://pet-backend.jokerbone.ca";
 
 export default rootURL;
