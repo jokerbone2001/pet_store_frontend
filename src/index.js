@@ -38,25 +38,35 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to='/order'>Order</Link>
-              </li>
-              <li>
-                <Link to='/users'>User</Link>
-              </li>
-              <li>
-                <Link to='/product'>Product</Link>
-              </li>
-              <li>
-                <Link to='/signup'>Sign up</Link>
-              </li>
-              <li>
-                <Link to='/login'>Log in</Link>
-              </li>
-            </ul>
-          </nav>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                    <div className="container-fluid">
+                      <Link className="navbar-brand" to="/">
+                      <img src="/logo.png" alt="Brand Logo" className="logo-image" />
+                      </Link>                        
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse" id="navbarNav">
+                            <ul className="navbar-nav">
+                                <li className="nav-item">
+                                    <Link className="nav-link large-bold-text" to='/order'>Order</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link large-bold-text" to='/users'>User</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link large-bold-text" to='/product'>Product</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link large-bold-text" to='/signup'>Sign up</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link large-bold-text" to='/login'>Log in</Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
           <Routes>
             <Route path='/order' element={<Orders></Orders>}/>
             <Route path='/users' element={<Users
@@ -76,7 +86,9 @@ class App extends React.Component {
           </Routes>
         </div>
       </Router>
+      
   )}
+
 }
 
 //import reportWebVitals from './reportWebVitals';

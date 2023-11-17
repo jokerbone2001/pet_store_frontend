@@ -2,6 +2,7 @@ import React from 'react'
 import './Products.css';
 import { Link } from 'react-router-dom';
 import rootURL from './url';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ProductURL = rootURL+"/product_json";
 const OrderAddtURL = rootURL+"/users/order/add";
@@ -68,21 +69,26 @@ class Products extends React.Component {
 }
   render() {
     return (
-      <div className="Products">
-        {this.state.Products.map((product, index) => (
-            <div className="Product-card" key={index}>
-                <h2>{product.name}</h2>
-                {product.images.map((image, imageIndex) => (
-                    <img key={imageIndex} src={image} alt="image"/>
+        <div className="Products container mt-5">
+            <div className="row">
+                {this.state.Products.map((product, index) => (
+                    <div className="col-md-4 mb-4" key={index}>
+                        <div className="card h-100"> 
+                            <img src={product.images[0]} alt="product" className="card-img-top" style={{ height: '200px', objectFit: 'cover' }}/>
+                            <div className="card-body">
+                                <h2 className="card-title font-weight-bold" style={{fontSize : '1.2rem'}}>{product.name}</h2> 
+                                <Link to={`/product/${product._id}`} className="btn btn-secondary mb-2 d-block">View Details</Link>
+                                <button className="btn btn-primary" onClick={() => this.handleAddToCart(product._id, product.price)}>Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
                 ))}
-                <button onClick={() => this.handleAddToCart(product._id, product.price)}>Add to Cart</button>
-
-                <Link to={`/product/${product._id}`} className="Product-button">View Details</Link>
             </div>
-        ))}
-      </div>
+        </div>
     )
   }
+
+
 }
 
 export default Products

@@ -2,6 +2,8 @@ import React from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import rootURL from './url';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './AuthPage.css'; // Reuse the same CSS file for consistent styling
 
 const LoginPageURL = rootURL+"/auth/login";
 
@@ -86,26 +88,29 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className="Login">
-                <h1 style={{ textAlign: 'center', marginBottom: '30px' }}>Login Page</h1>
-               
-                <form onSubmit={this.handleSubmit}>
-                    <UserInput 
-                        name="email_address" 
-                        type="email" 
-                        placeholder="Enter your email" 
-                        value={this.state.email_address} 
-                        handleChange={this.handleInputChange}
-                    />
-                    <UserInput 
-                        name="password" 
-                        type="password" 
-                        placeholder="Enter your password" 
-                        value={this.state.password} 
-                        handleChange={this.handleInputChange}
-                    />
-                    <SubmitButton text="Login" />
-                </form>
+            <div className="auth-page">
+                <div className="auth-container">
+                    <h1 className="auth-title">Login In</h1>
+                    <form onSubmit={this.handleSubmit}>
+                        <input
+                            className="input-field"
+                            name="email_address"
+                            type="email"
+                            placeholder="Enter your email"
+                            value={this.state.email_address}
+                            onChange={this.handleInputChange}
+                        />
+                        <input
+                            className="input-field"
+                            name="password"
+                            type="password"
+                            placeholder="Enter your password"
+                            value={this.state.password}
+                            onChange={this.handleInputChange}
+                        />
+                        <button className="submit" type="submit">Login</button>
+                    </form>
+                </div>
             </div>
         );
     }

@@ -1,0 +1,64 @@
+.auth-page {
+    background: url('../public/login-background.png') no-repeat center center fixed;
+    background-size: cover; /* Ensure it covers the entire page */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.auth-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Adjust as needed */
+    animation: fadeIn 0.5s; /* Simple fade-in animation */
+
+}
+
+.auth-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.input-field, .submit {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.input-field:focus {
+    border-color: #2193b0;
+    outline: none;
+}
+
+.submit {
+    background-color: #2193b0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit:hover {
+    background-color: #12738a;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+    }
+}

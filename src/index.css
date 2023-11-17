@@ -34,3 +34,20 @@ nav ul li a {
   text-decoration: none;
   color: #0f0e0e;
 }
+
+.navbar-brand {
+  max-height: 50px; /* 例子，根据实际情况调整 */
+  display: flex;
+  align-items: center; /* 这将垂直居中子元素，如 logo 图片 */
+}
+
+.navbar .large-bold-text
+{
+  font-size: 18px; /* 调整字体大小为您希望的大小 */
+  font-weight: bold; /* 加粗字体 */
+}
+.logo-image {
+  max-height: 100%;
+  max-width: 100%; /* 这将确保图片不会超过其容器的宽度或高度 */
+  height: 50px; /* 保持宽高比 */
+}

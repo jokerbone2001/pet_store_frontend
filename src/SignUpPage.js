@@ -1,5 +1,7 @@
 import React from 'react';
 import rootURL from './url';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './AuthPage.css'; // Reuse the same CSS file for consistent styling
 
 const SignupURL = rootURL+"/auth/register";
 
@@ -9,6 +11,8 @@ const SubmitButton = (props) => {
 
 const UserInput = (props) => (
     <input
+        className="input-field" // Add class for styling
+
         type={props.type}
         placeholder={props.placeholder}
         value={props.value}
@@ -55,7 +59,7 @@ class SignUpPage extends React.Component {
             if (data.message === "User registered successfully") {
                 alert('Registration successful!');
                 // Redirect to the login page
-                window.location.replace('http://localhost:3000/login');
+                window.location.replace('rootURL/login');
 
              
             } else {
@@ -67,28 +71,29 @@ class SignUpPage extends React.Component {
             alert('Registration failed. Please try again later.');
         });
     };
-
     render() {
         return (
-            <div className="Signup">
-              <h1 style={{ textAlign: 'center', marginBottom: '30px' }}>Sign up</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <UserInput 
-                        name="email_address" 
-                        type="email" 
-                        placeholder="Enter your email" 
-                        value={this.state.email_address} 
-                        handleChange={this.handleInputChange}
-                    />
-                    <UserInput 
-                        name="password" 
-                        type="password" 
-                        placeholder="Enter your password" 
-                        value={this.state.password} 
-                        handleChange={this.handleInputChange}
-                    />
-                    <SubmitButton text="Register" />
-                </form>
+            <div className="auth-page">
+                <div className="auth-container">
+                    <h1 className="auth-title">Sign Up</h1>
+                    <form onSubmit={this.handleSubmit}>
+                        <UserInput 
+                            name="email_address" 
+                            type="email" 
+                            placeholder="Enter your email" 
+                            value={this.state.email_address} 
+                            handleChange={this.handleInputChange}
+                        />
+                        <UserInput 
+                            name="password" 
+                            type="password" 
+                            placeholder="Enter your password" 
+                            value={this.state.password} 
+                            handleChange={this.handleInputChange}
+                        />
+                        <SubmitButton text="Register" />
+                    </form>
+                </div>
             </div>
         );
     }

@@ -1,21 +1,79 @@
+/* 整体布局 */
 .Users {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    background-color: #f5f5f5;
+  margin: 20px;
+  padding: 20px;
+  background-color: rgb(247, 248, 249);
+  font-family: Arial, sans-serif;
+  display: flex;    
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.Users h2 {
-    color: #333;
+/* 头部样式 */
+h1 {
+  font-size: 24px;
+  color: #333;
 }
 
-.Users img {
-    margin: 10px 0;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+/* 用户信息容器 */
+.user-info {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-.Users p {
-    color: #666;
+/* 编辑按钮 */
+.edit-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+/* 输入字段样式 */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* 图像样式 */
+.user-image {
+  max-width: 200px;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  margin: 10px auto;
+  display: block;
+}
+
+/* 表单提交按钮 */
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+  .Users {
+    margin: 10px;
+    padding: 10px;
+  }
 }
